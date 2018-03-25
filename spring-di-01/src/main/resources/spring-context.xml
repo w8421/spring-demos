@@ -23,4 +23,19 @@
 
 	</bean>	
 
+	<!-- 静态工厂注入 -->
+	<bean id="userDao01" class="com.shsxt.service.StaticFactory" factory-method="createUserDao"></bean>
+	<bean id="userService3" class="com.shsxt.service.UserService3">
+		<property name="userDao" ref="userDao01"></property>
+	</bean>
+
+
+
+
+
+
+
+
+
+
 	</beans>
