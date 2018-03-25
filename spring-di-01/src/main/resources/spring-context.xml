@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="userDao" class="com.shsxt.dao.UserDao"></bean>
+	
+	<bean id="userService" class="com.shsxt.service.UserService">
+	
+		<!-- name是要注入的属性名称  ref是bean的引用 ，和上面的bean id相同-->
+		<property name="userDao" ref="userDao"></property>
+		
+		<!-- String类型的变量 通过value值注入 -->
+		<property name="name" value="zhangsan"></property>
+		
+		<property name="age" value="18"></property>
+	</bean>
+
+	<!-- 通过带参构造器的参数注入 还可以根据索引名字注入-->
+	<bean id="userService2" class="com.shsxt.service.UserService2">
+		<constructor-arg index="0" ref="userDao"></constructor-arg>
+
+	</bean>	
+
+	</beans>
