@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+		<!-- 1.构造器的方法实例化bean对象 -->
+		<!-- <bean id="helloService" class="com.shsxt.demo.HelloService"></bean> -->
+	
+		<!-- 2.静态工厂创建bean -->
+		<bean id="userService" class="com.shsxt.factory.StaticFactory" factory-method="createUserService"></bean>
+		
+		<!-- 3.实例化工厂创建bean -->
+		<bean id="instanceFactory" class="com.shsxt.factory.InstanceFactory"></bean>
+		<!-- 根据实例化工厂bean的方法创建bean -->
+		<bean id="userService2" factory-bean="instanceFactory" factory-method="createUserService2"></bean>
+		
+	</beans>

@@ -10,6 +10,9 @@
   	<module>spring-bean</module>
 	<module>spring-ioc-01</module>
 	<module>spring-di-01</module>
+	<module>spring-di-03</module>
+	<module>spring-di-04</module>
+	<module>spring-jdbc-01</module>
   </modules>
   
   <dependencies>
